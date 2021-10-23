@@ -1,12 +1,20 @@
 import express from "express";
 import router from "./routes/router.js";
+import db from "./config/db.js";
 
 // app initialization
 const app = express();
 
 // initializing port
-
 const PORT = process.env.port || 5000;
+
+// database connecttion
+try {
+	db.authenticate();
+	console.log("Database Connected....");
+} catch (error) {
+	console.error(error);
+}
 
 // connecting to routes
 app.use(router);
