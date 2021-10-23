@@ -1,6 +1,7 @@
 import express from "express";
 import router from "./routes/router.js";
 import db from "./config/db.js";
+import expressLayouts from "express-ejs-layouts";
 
 // app initialization
 const app = express();
@@ -18,6 +19,8 @@ try {
 
 // middleware
 app.use(express.json());
+app.set("view engine", "ejs");
+app.use(expressLayouts);
 
 // connecting to routes
 app.use(router);
