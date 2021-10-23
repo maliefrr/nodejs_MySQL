@@ -16,6 +16,9 @@ try {
 	console.error(error);
 }
 
+// middleware
+app.use(express.json());
+
 // connecting to routes
 app.use(router);
 
