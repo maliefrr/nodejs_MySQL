@@ -5,5 +5,6 @@ export const getAllList = async (req, res) => {
 	res.render("home", {
 		layout: "layouts/main-layout",
 		title: "Home",
+		list,
 	});
 };
