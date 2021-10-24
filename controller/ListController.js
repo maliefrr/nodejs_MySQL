@@ -30,3 +30,22 @@ export const postAddList = async (req, res) => {
 		});
 	}
 };
+
+export const editListById = async (req, res) => {
+	try {
+		const list = await todoList.findAll({
+			where: {
+				id: req.params.id,
+			},
+		});
+		res.render("editList", {
+			layout: "./layouts/main-layout",
+			title: "Edit",
+			list,
+		});
+	} catch (error) {
+		res.json({
+			error: error.message,
+		});
+	}
+};
