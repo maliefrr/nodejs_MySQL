@@ -8,3 +8,10 @@ export const getAllList = async (req, res) => {
 		list,
 	});
 };
+
+export const addList = (req, res) => {
+	res.render("new", {
+		layout: "layouts/main-layout",
+		title: "Add",
+	});
+};
