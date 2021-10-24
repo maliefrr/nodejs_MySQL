@@ -9,9 +9,24 @@ export const getAllList = async (req, res) => {
 	});
 };
 
-export const addList = (req, res) => {
+export const getAddList = (req, res) => {
 	res.render("new", {
 		layout: "layouts/main-layout",
 		title: "Add",
 	});
+};
+
+export const postAddList = async (req, res) => {
+	try {
+		const { activities, status } = await req.body;
+		await todoList.create({
+			activities,
+			status,
+		});
+		res.redirect("/");
+	} catch (error) {
+		res.json({
+			error: error.message,
+		});
+	}
 };

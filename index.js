@@ -18,8 +18,8 @@ try {
 }
 
 // middleware
-app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: false }));
 app.use(expressLayouts);
 
 // connecting to routes
