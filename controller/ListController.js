@@ -31,7 +31,7 @@ export const postAddList = async (req, res) => {
 	}
 };
 
-export const editListById = async (req, res) => {
+export const getListById = async (req, res) => {
 	try {
 		const list = await todoList.findAll({
 			where: {
