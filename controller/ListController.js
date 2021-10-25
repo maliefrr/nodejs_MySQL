@@ -6,6 +6,7 @@ export const getAllList = async (req, res) => {
 		layout: "layouts/main-layout",
 		title: "Home",
 		list,
+		sucsess: req.flash("sucsess"),
 	});
 };
 
@@ -23,6 +24,7 @@ export const postAddList = async (req, res) => {
 			activities,
 			status,
 		});
+		req.flash("sucsess", "Data berhasil ditambahkan");
 		res.redirect("/");
 	} catch (error) {
 		res.json({
